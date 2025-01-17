@@ -1,0 +1,84 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* itemSwiper */
+.itemSwiper {
+  width: 70%;
+  /* 처음 반응형 너비는 %로 넣기! */
+  /* 브라우저 70% 너비만 보여라 */
+}
+.itemSwiper .swiper-slide {
+  width: 100%;
+}
+.itemSwiper .swiper-slide img {
+  width: 100%;
+  /* 위에 70% 크기 따라간거임 */
+  /* js 에서 브라우저 크기에 따라 갯수 넣어준거 포함 */
+  display: block;
+  /* 이미지와 텍스트 사이 공간 메우기 */
+}
+.itemSwiper-txt {
+  padding: 10px;
+  background-color: aqua;
+}
+
+/* visualSwiper */
+.visualSwiper {
+  margin: 100px 0;
+  position: relative;
+  width: 100%;
+  height: 31.25vw;
+  /* 600 ÷ 1920 x 100 */
+
+  /* height: 600px; */
+  /* img height는 안 줬기 때문에 여기 높이를 600px 하면 이미지 잘림 */
+  /* 브라우저 크기 줄이면 이미지 아래 가려졌던 부분이 서서히 드러나서 보일 거임 */
+}
+.visualSwiper img {
+  /* img 따로 꼭 width: 100% 해주기!!!! */
+  /* 이미지에 손대지 말고 이미지 영역으로 크기 설정하기 */
+  width: 100%;
+}
+.visualSwiper .itemSwiper-txt {
+  width: 200px;
+  position: absolute;
+  /* .visualSwiper 에 position: relative; 쓴 거 따라감*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 반응형 */
+/* 여기는 크기 큰 애부터 작은 애 순으로 작성 */
+@media all and (max-width: 980px) {
+  .visualSwiper .itemSwiper-txt {
+    width: 180px;
+    font-size: 15px;
+    background-color: aquamarine;
+  }
+}
+@media all and (max-width: 590px) {
+  /* all 말고 우리는 지금 screen 해도 됨 */
+  /* 최대 스크린 너비를 맞춰놓고 그 미만일 때 반응형 설정하는 거임 */
+  .itemSwiper-txt {
+    padding: 20px;
+    background-color: aquamarine;
+  }
+  .itemSwiper-txt p:first-child {
+    font-size: 13px;
+    color: #9a9a9a;
+  }
+}
+@media all and (max-width: 390px) {
+  .itemSwiper-txt {
+    padding: 10px;
+  }
+  .visualSwiper {
+    /* 이미지 영역 높이 ÷ 390(브라우저 넓이) x 100 */
+    height: 94.35px;
+  }
+}

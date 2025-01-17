@@ -1,0 +1,85 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, li{
+    list-style: none;
+}
+
+.container{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    max-width: 650px;
+    min-width: 270px;
+    background-color: aquamarine;
+}
+.card li:first-child{
+    background-color: rgb(255, 219, 247);
+}
+.card li{
+    display: flex;
+    /* display는 gap!!잊지말기!!! */
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+.card li img{
+    width: 60%;
+}
+.card-txt{
+    width: 40%;
+    background-color: blanchedalmond;
+}
+.card .house{
+    display: none;
+}
+.card .product{
+    display: none;
+}
+
+
+/* 반응형 */
+@media screen and (max-width : 768px) {
+    .card li{
+        flex-direction: column;
+    }
+    .card li img{
+        width: 100%;
+    }
+    .card-txt{
+        width: 100%;
+        background-color: blanchedalmond;
+    }
+}
+@media screen and (max-width : 390px) {
+    .card-txt h3{
+        font-size: 13px;
+    }
+    .card-txt p{
+        font-size: 10px;
+    }
+    .card-txt{
+        background-color: #fff;
+    }
+    .container{
+        background-color: rgb(157, 255, 170);
+    }
+    .container li:first-child{
+        background-color: rgb(255, 149, 149);
+    }
+    .card .clock{
+        display: none;
+    }
+    .card .house{
+        display: block;
+    }
+    .card .book{
+        display: none;
+    }
+    .card .product{
+        display: block;
+    }
+}
