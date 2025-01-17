@@ -7,6 +7,25 @@
 ul, li{
     list-style: none;
 }
+html{
+    font-size: 15px;
+    /* 1rem의 기준 */
+}
+h1{
+    text-align: center;
+    margin: 100px 0;
+    font-size: 5rem;
+    /* 앞으로 h1은 html px값에 X 5rem 됨 */
+    /* 바꾸고 싶으면 html px을 변경 거기에 무조건 X 5 임 */
+    /* h1은 5rem이 기준이 되고 아래 반응형에서 html 폰트 사이즈를 바꾸면 비율이 같게 사이즈가 변경이 될 거임 */
+    /* h1:5rem, h2:4rem, p:2rem, span:1rem 하면 하나하나 안바꿔도 비율 유지 할 수있음 */
+}
+h2{
+    text-align: center;
+    font-size: 5vw;
+    /* 반응형에 폰트 최소값은 꼭 설정해줘야함 */
+
+}
 
 .container{
     position: relative;
@@ -53,14 +72,25 @@ ul, li{
         width: 100%;
         background-color: blanchedalmond;
     }
+    html {
+        font-size: 13px;
+        /* 13px x  5 (rem)이 될거임  */
+    }
+    h2{
+        font-size: 16px;
+        /* 폰트 최소 사이즈 */
+    }
 }
 @media screen and (max-width : 390px) {
-    .card-txt h3{
+    /* .card-txt h3{
         font-size: 13px;
     }
     .card-txt p{
         font-size: 10px;
-    }
+    } */
+     html{
+        font-size: 5px;
+     }
     .card-txt{
         background-color: #fff;
     }
